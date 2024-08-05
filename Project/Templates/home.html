@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parse CSV File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .alert {
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+
+        .alert-info {
+            color: #31708f;
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+        }
+
+        .alert-warning {
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border-color: #faebcc;
+        }
+
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+
+        .table-responsive {
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+
+        .chart-container {
+            text-align: center;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 align="center">
+            Please Upload CSV File
+        </h2>
+
+        <br>
+        <form method="post" enctype="multipart/form-data">
+            <center>
+                {%csrf_token %}
+                Select File:<br> <input type="file" name="myfile"><br>
+                <h2><button type="submit">Upload File</button></h2>
+            </center>
+        </form>
+        <br>
+
+        <center>{% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}}" role="alert">
+                <p{% if message.tags %} class="" {% endif %}>{{ message }}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </center>
+
+        {% if df_html %}
+        <h2>Data Preview</h2>
+        <div class="table-responsive">
+            {{ df_html|safe }}
+        </div>
+        {% endif %}
+
+        {% if Total_R %}
+        Total number of rows :
+        {{ Total_R|safe }}
+        <hr>
+        {% endif %}
+
+        {% if avg_web_dev %}
+        1.Avg Salary of Web Developer :Rs.{{ avg_web_dev|safe }}
+        <br>
+        {% endif %}
+
+        {% if DevOps_Eng %}
+        2.Avg Salary of DevOps Engineer :Rs.{{ DevOps_Eng|safe }}
+        <br>
+        {% endif %}
+
+        {% if sys_admin %}
+        3.Avg Salary of System Administration :Rs.{{ sys_admin|safe }}
+        <br>
+        {% endif %}
+
+        {% if avg_it_security_analyst %}
+        4. Avg Salary of IT Security Analyst: Rs. {{ avg_it_security_analyst|safe }}
+        <br>
+        {% endif %}
+
+        {% if avg_manager %}
+        5. Avg Salary of Manager: Rs. {{ avg_manager|safe }}
+        <hr>
+        {% endif %}
+
+        {% if std_exp %}
+        <h4>Standard Deviation of experience:</h4> {{ std_exp|safe }}
+        <hr>
+        {% endif %}
+
+        {% if avg_exp %}
+        <h4>Avg experience:</h4> {{ avg_exp|safe }} years
+        <hr>
+        {% endif %}
+
+        {% if min_sal_WebD %}
+        <h4>Minimum Salary for Web Developer:</h4>Rs {{min_sal_WebD}}
+        <hr>
+        {% endif %}
+        {% if max_salary %}
+        <h4>Maximum Salary</h4>
+        <p>Maximum Salary: Rs. {{ max_salary }}</p>
+        <p>Positions with Maximum Salary: {{ positions_with_max_salary }}</p>
+        <hr>
+        {% endif %}
+        {% if avg_salary %}
+        <h4>Average Salary for Experience Greater Than 15 Years</h4>
+        <p>Average Salary: Rs. {{ avg_salary }}</p>
+        <hr>
+        {% endif %}
+        {% if avg_salary2 %}
+        <h4>Average Salary for Experience Lesser Than 5 Years</h4>
+        <p>Average Salary: Rs. {{ avg_salary2 }}</p>
+        <hr>
+        {% endif %}
+
+
+        {% if graphic %}
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ graphic }}" alt="Gender Distribution by Position">
+            <h3></h3>
+        </div>
+        {% endif %}
+
+        {% if graphic1 %}
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ graphic1 }}" alt="Salaries of software Engineer according to experience">
+            <h3></h3>
+        </div>
+        {% endif %}
+
+        {% if graphic2 %}
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ graphic2 }}" alt="Gender Distribution for Database Administrators">
+        </div>
+        {% endif %}
+
+        {% if box_plot_graphic %}
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ box_plot_graphic }}" alt="Salary Distribution by Gender">
+        </div>
+        {% endif %}
+
+        {% if pie_chart_graphic %}
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ pie_chart_graphic }}"
+                alt="Gender Distribution for Salaries Less Than 100,000">
+        </div>
+        {% endif %}
+
+        {% if countplot_position_graphic %}
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ countplot_position_graphic }}" alt="Countplot for Positions">
+        </div>
+        {% endif %}
+    </div>
+
+
+</body>
+
+</html>
