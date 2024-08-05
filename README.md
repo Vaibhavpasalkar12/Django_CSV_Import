@@ -1,6 +1,7 @@
 # User-Friendly CSV File Uploader with Data Analysis and Visualization
+### This project involves creating a user-friendly web application using Django, where users can upload CSV files. The application provides an intuitive interface to ensure ease of use. After uploading a CSV file, the application performs simple data analysis with the help of Pandas and generates various graphs to visualize the data.
 
-### Technologies Used: Django, Python, Pandas, Matplotlib, seaborn, HTML+CSS
+#### Technologies Used: Django, Python, Pandas, Matplotlib, seaborn, HTML+CSS
 
 # Setup Instructions:
 ## Prerequisites:
