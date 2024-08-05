@@ -9,7 +9,7 @@
 3) Virtualenv (optional but recommended)
 
 ### Step 1: Clone the Repository
-git clone https://github.com/your-username/your-repository.git
+git clone (https://github.com/Vaibhavpasalkar12/Django_CSV_Import.git)
 cd your-repository
 ### Step 2: Create and Activate a Virtual Environment (optional but recommended)
 python -m venv venv
