@@ -26,3 +26,15 @@ python manage.py runserver .
 Visit http://127.0.0.1:8000/ in your web browser to access the application.
 #### Step 7: Access the Admin Interface
 Visit http://127.0.0.1:8000/admin in your web browser and log in with the superuser credentials you created earlier.
+
+## Key Features:
+
+### 1) CSV File Upload: Users can upload CSV files through a clean and simple web interface.
+### 2) Data Validation: The uploaded CSV files are validated to ensure they are in the correct format.
+### 3) Data Analysis: Basic data analysis is performed on the uploaded CSV data using Python's Pandas library.
+### 4) Data Visualization: The results of the data analysis are visualized using graphs and charts created with Matplotlib.
+### 5) User Interface: The web interface is designed to be user-friendly and accessible, making the data upload and visualization process straightforward for users.
+
+_____________________________________________________________________________________________________________________________________________________________________
+
+### Data Analysis and Visualization: Once a CSV file is uploaded, the application will process the data using Pandas and generate visualizations, such as various graphs, which can be viewed on the same page .
