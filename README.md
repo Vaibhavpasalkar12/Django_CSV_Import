@@ -38,3 +38,11 @@ Visit http://127.0.0.1:8000/admin in your web browser and log in with the superu
 _____________________________________________________________________________________________________________________________________________________________________
 
 ### Data Analysis and Visualization: Once a CSV file is uploaded, the application will process the data using Pandas and generate visualizations, such as various graphs, which can be viewed on the same page .
+
+Image/Z1.png
+![Demo](Image/Z1.png)
+![Demo](Image/Z2.png)
+![Demo](Image/Z3.png)
+![Demo](Image/Z4.png)
+![Demo](Image/Z5.png)
+![Demo](Image/Z6.png)
