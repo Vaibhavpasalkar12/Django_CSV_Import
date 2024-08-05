@@ -14,8 +14,7 @@
 git clone (https://github.com/Vaibhavpasalkar12/Django_CSV_Import.git)
 cd your-repository
 #### Step 2: Create and Activate a Virtual Environment (optional but recommended)
-python -m venv venv
-source venv\Scripts\activate
+venv\Scripts\activate
 #### Step 3: Install Dependencies
 pip install -r requirements.txt
 #### Step 4: Apply Migrations
