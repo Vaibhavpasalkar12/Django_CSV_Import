@@ -8,6 +8,7 @@
 1) Python 3.x
 2) Django 
 3) Virtualenv (optional but recommended)
+> **Tip:** This application is designed to work with CSV files that contain the following columns: `ID`, `GENDER`, `EXPERIENCE`, `POSITION`, `SALARY`. Please ensure your CSV files adhere to this format for accurate data analysis and visualization.
 
 #### Step 1: Clone the Repository
 git clone (https://github.com/Vaibhavpasalkar12/Django_CSV_Import.git)
