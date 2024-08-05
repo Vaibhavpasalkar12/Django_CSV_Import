@@ -29,11 +29,11 @@ Visit http://127.0.0.1:8000/admin in your web browser and log in with the superu
 
 ## Key Features:
 
-### 1) CSV File Upload: Users can upload CSV files through a clean and simple web interface.
-### 2) Data Validation: The uploaded CSV files are validated to ensure they are in the correct format.
-### 3) Data Analysis: Basic data analysis is performed on the uploaded CSV data using Python's Pandas library.
-### 4) Data Visualization: The results of the data analysis are visualized using graphs and charts created with Matplotlib.
-### 5) User Interface: The web interface is designed to be user-friendly and accessible, making the data upload and visualization process straightforward for users.
+#### 1) CSV File Upload: Users can upload CSV files through a clean and simple web interface.
+#### 2) Data Validation: The uploaded CSV files are validated to ensure they are in the correct format.
+#### 3) Data Analysis: Basic data analysis is performed on the uploaded CSV data using Python's Pandas library.
+#### 4) Data Visualization: The results of the data analysis are visualized using graphs and charts created with Matplotlib.
+#### 5) User Interface: The web interface is designed to be user-friendly and accessible, making the data upload and visualization process straightforward for users.
 
 _____________________________________________________________________________________________________________________________________________________________________
 
